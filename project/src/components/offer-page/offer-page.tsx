@@ -1,4 +1,4 @@
-import UserNav from '../user-nav/user-nav';
+import Header from '../header/header';
 import OfferOptions from '../offer-options/offer-options';
 import OfferHost from '../offer-host/offer-host';
 import OfferReviews from '../offer-reviews/offer-reviews';
@@ -8,19 +8,7 @@ function OfferPage(): JSX.Element {
 
   return (
     <div className="page">
-      <header className="header">
-        <div className="container">
-          <div className="header__wrapper">
-            <div className="header__left">
-              <a className="header__logo-link" href="main.html">
-                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
-              </a>
-            </div>
-            <UserNav />
-          </div>
-        </div>
-      </header>
-
+      <Header />
       <main className="page__main page__main--property">
         <section className="property">
           <div className="property__gallery-container container">
