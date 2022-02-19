@@ -1,11 +1,12 @@
 import Header from '../header/header';
+import { AppRoute, AuthorizationStatus } from '../../const';
 import FavoritesFooter from '../favorites-footer/favorites-footer';
 
 function FavoritesEmpty(): JSX.Element {
 
   return (
     <div className="page page--favorites-empty">
-      <Header/>
+      <Header authorizationStatus={AuthorizationStatus.Auth} pageUrl={AppRoute.Favorites} />
       <main className="page__main page__main--favorites page__main--favorites-empty">
         <div className="page__favorites-container container">
           <section className="favorites favorites--empty">

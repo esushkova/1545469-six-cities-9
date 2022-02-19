@@ -1,6 +1,7 @@
 import PlaceCard from '../place-card/place-card';
 import Header from '../header/header';
 import Locations from '../locations/locations';
+import { AppRoute, AuthorizationStatus } from '../../const';
 
 type MainPageProps = {
   numberOfOffers: number;
@@ -9,7 +10,7 @@ type MainPageProps = {
 function MainPage({ numberOfOffers }: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
-      <Header />
+      <Header authorizationStatus={AuthorizationStatus.Auth} pageUrl={AppRoute.Main} />
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">

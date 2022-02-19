@@ -1,12 +1,13 @@
 import Header from '../header/header';
 import Locations from '../locations/locations';
+import { AppRoute, AuthorizationStatus } from '../../const';
 
 
 function MainEmpty(): JSX.Element {
 
   return (
     <div className="page page--gray page--main">
-      <Header />
+      <Header authorizationStatus={AuthorizationStatus.Auth} pageUrl={AppRoute.Main} />
       <main className="page__main page__main--index page__main--index-empty">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
