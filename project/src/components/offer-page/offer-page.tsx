@@ -3,12 +3,13 @@ import OfferOptions from '../offer-options/offer-options';
 import OfferHost from '../offer-host/offer-host';
 import OfferReviews from '../offer-reviews/offer-reviews';
 import OtherPlaces from '../other-places/other-places';
+import {AppRoute, AuthorizationStatus} from '../../const';
 
 function OfferPage(): JSX.Element {
 
   return (
     <div className="page">
-      <Header />
+      <Header authorizationStatus={AuthorizationStatus.Auth} pageUrl={AppRoute.Room}/>
       <main className="page__main page__main--property">
         <section className="property">
           <div className="property__gallery-container container">
