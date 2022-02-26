@@ -1,13 +1,15 @@
-import PlaceCard from '../place-card/place-card';
 import Header from '../header/header';
 import Locations from '../locations/locations';
 import { AppRoute, AuthorizationStatus } from '../../const';
+import { Offers } from '../../types/offers';
+import MainCardsList from '../main-cards-list/main-cards-list';
 
 type MainPageProps = {
   numberOfOffers: number;
+  offers: Offers;
 }
 
-function MainPage({ numberOfOffers }: MainPageProps): JSX.Element {
+function MainPage({ numberOfOffers, offers }: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <Header authorizationStatus={AuthorizationStatus.Auth} pageUrl={AppRoute.Main} />
@@ -37,11 +39,7 @@ function MainPage({ numberOfOffers }: MainPageProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
+                <MainCardsList offers={offers} />
               </div>
             </section>
             <div className="cities__right-section">

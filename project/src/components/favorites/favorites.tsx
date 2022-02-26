@@ -2,8 +2,15 @@ import Header from '../header/header';
 import FavoritesLocation from '../favorites-locations/favorites-locations';
 import FavoritesFooter from '../favorites-footer/favorites-footer';
 import { AppRoute, AuthorizationStatus } from '../../const';
+import { Offers } from '../../types/offers';
+import { cityNames } from '../../const';
 
-function Favorites(): JSX.Element {
+
+type FavoritesPageProps = {
+  offers: Offers;
+}
+
+function Favorites({ offers }: FavoritesPageProps): JSX.Element {
   return (
     <div className="page">
       <Header authorizationStatus={AuthorizationStatus.Auth} pageUrl={AppRoute.Favorites} />
@@ -12,8 +19,7 @@ function Favorites(): JSX.Element {
           <section className="favorites">
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
-              <FavoritesLocation />
-              <FavoritesLocation />
+              {cityNames.map((cityName) => <FavoritesLocation key={cityName} cityName={cityName} offers={offers.filter((offer) => offer.city.name === cityName)} />)}
             </ul>
           </section>
         </div>

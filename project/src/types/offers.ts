@@ -1,0 +1,38 @@
+type Geolocation = {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+};
+
+type City = {
+  location: Geolocation;
+  name: string;
+};
+
+type User = {
+  avatarUrl: string;
+  id: number;
+  isPro: boolean;
+  name: string;
+};
+
+export type Offer = {
+  bedrooms: number;
+  city: City;
+  description: string;
+  goods: string[];
+  host: User;
+  id: number;
+  images: string[];
+  isFavorite: boolean;
+  isPremium: boolean;
+  location: Geolocation;
+  maxAdults: number;
+  previewImage: string;
+  price: number;
+  rating: number;
+  title: string;
+  type: string;
+};
+
+export type Offers = Offer[];
