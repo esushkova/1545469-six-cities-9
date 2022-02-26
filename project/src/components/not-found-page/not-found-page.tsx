@@ -1,7 +1,7 @@
 import FavoritesFooter from '../favorites-footer/favorites-footer';
 import Header from '../header/header';
 import {Link} from 'react-router-dom';
-import {AuthorizationStatus} from '../../const';
+import {AppRoute, AuthorizationStatus} from '../../const';
 
 function NotFoundPage(): JSX.Element {
 
@@ -13,7 +13,7 @@ function NotFoundPage(): JSX.Element {
         <div className="page__favorites-container container">
           <section className="favorites">
             <h1 className="favorites__title">404 Not Found</h1>
-            <Link to='/'>Вернуться на главную</Link>
+            <Link to={AppRoute.Main}>Вернуться на главную</Link>
           </section>
         </div>
       </main>
